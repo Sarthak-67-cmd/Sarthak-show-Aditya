@@ -4,36 +4,25 @@ This project uses a Python virtual environment called `.venv`.
 
 ## 1. Open the project folder
 
-Open PowerShell and run:
-
 ```powershell
 cd S:\hologram-project
 ```
 
 ## 2. Create `.venv`
 
-Run:
+Run this only once:
 
 ```powershell
 python -m venv .venv
 ```
 
-This creates:
-
-```text
-hologram-project/
-└── .venv/
-```
-
 ## 3. Activate `.venv`
 
-For PowerShell:
-
 ```powershell
-.\.venv\Scripts\Activate.ps1
+.venv\Scripts\activate
 ```
 
-You should see:
+After activation, you should see:
 
 ```text
 (.venv) PS S:\hologram-project>
@@ -41,15 +30,21 @@ You should see:
 
 ## 4. Install the required packages
 
-With `.venv` activated:
-
 ```powershell
 pip install opencv-python mediapipe numpy pygame scipy open3d
 ```
 
-## 5. Deactivate `.venv`
+## 5. Run the project
 
-When you're finished:
+For example:
+
+```powershell
+python hologram_3d.py
+```
+
+## 6. Deactivate `.venv`
+
+When finished:
 
 ```powershell
 deactivate
@@ -57,31 +52,27 @@ deactivate
 
 ## Next time
 
-You **do not need to create `.venv` again**.
+You don't need to create `.venv` again.
 
-Just open the project folder and activate it:
+Just run:
 
 ```powershell
 cd S:\hologram-project
-.\.venv\Scripts\Activate.ps1
+.venv\Scripts\activate
 ```
 
-Then run your Python files normally:
+Then run your Python file:
 
 ```powershell
 python hologram_3d.py
 ```
 
-## If PowerShell blocks activation
+## Important
 
-Run this once:
+The `.venv` folder contains the project's Python environment and should generally **not be uploaded to GitHub**.
 
-```powershell
-Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
-```
+Add this to `.gitignore`:
 
-Then activate again:
-
-```powershell
-.\.venv\Scripts\Activate.ps1
+```text
+.venv/
 ```
